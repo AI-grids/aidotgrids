@@ -4,7 +4,11 @@
 
 1. [Quick start](#1-quick-start)
 2. [Prerequisites](#2-prerequisites)
-3. [Datasets](#2-datasets)
+3. [Datasets](#3-datasets)
+4. [Running tests](#4-running-tests)
+5. [Contributions](#5-contributions)
+6. [License](#6-license)
+
 
 ## 1. Quick start
 
@@ -65,3 +69,17 @@ ds = load(
 )
 ```
 
+## 4. Running tests
+
+
+
+
+## 5. Contributions
+
+We welcome pull requests for new datasets, models and algorithms. Please read
+[contributions.md](docs/contributions.md) before opening an issue or pull request.
+
+
+## 6. License
+
+This project is licensed under the MIT license. See [LICENSE](LICENSE) file for details.
