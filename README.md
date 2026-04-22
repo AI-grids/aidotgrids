@@ -12,13 +12,13 @@
 
 ## 1. Quick start
 
-### (Option A) Use the stable ai4climate release (recommended)
+### (Option A) Use the stable aidotgrids release (recommended)
 
 ```bash
 pip install -U aidotgrids
 ```
 
-### (Option B) Use the bleeding‑edge version bundled with this repo
+### (Option B) Use the bleeding‑edge version of aidotgrids
 
 ```bash
 git clone https://github.com/AI-grids/aidotgrids
