@@ -71,7 +71,9 @@ ds = load(
 
 ## 4. Running tests
 
-
+```bash
+python tests/test_opfdata.py
+```
 
 
 ## 5. Contributions
