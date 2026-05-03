@@ -480,9 +480,14 @@ def _split_data(
     # you could handle each group separately. For brevity, we do a single trim.
     new_train, new_val, new_test = [], [], []
     for grp, sample in all_data:
-        if   grp == 'train': new_train.append(sample)
-        elif grp == 'val':   new_val.append(sample)
-        else:                new_test.append(sample)
+        if   grp == 'train': 
+            new_train.append(sample)
+            
+        elif grp == 'val':   
+            new_val.append(sample)
+
+        else:                
+            new_test.append(sample)
 
     train_data = new_train
     val_data   = new_val

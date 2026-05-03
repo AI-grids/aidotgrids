@@ -5,18 +5,22 @@ Example usage:
 --------------
     $ python tests/test_opfdata.py
 
+or
+    $ pytest
+
 """
+import string
+import random
 
-import sys
-sys.path.append("src/aidotgrids")
-import load
+from aidotgrids import load
 
-root_path = "<Provide your path to data root repo>"
-(
-    train_data, 
-    val_data, 
-    test_data
-) = load.load_task(
+# create a random root path name
+root_path = "~/AI-grid/test_opfdata_".join(
+    random.choice(string.ascii_letters) for _ in range(7)
+)
+
+
+dataset = load.load_task(
     "OPFData", 
     "train_medium_test_small", 
     root_path,

@@ -5,7 +5,7 @@ https://github.com/AI-grids/aidotgrids/blob/master/docs/windfarm.md
 
 """
 import os
-from typing import Dict, Any, Tuple, Union, List
+from typing import Dict, Any, Union, List
 import pandas as pd
 import numpy as np
 import gc

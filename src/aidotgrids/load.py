@@ -2,9 +2,9 @@
 
 Example usage:
 --------------
-    from aidotgrids import load
+    from aidotgrids import load_task
 
-    dataset = load(
+    dataset = load_task(
         task_name='OPFData', 
         subtask_name='train_small_test_medium',
         root_path='~/AI-grids/'
@@ -19,12 +19,14 @@ import subprocess
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # individual task loading modules
-import opfdata
-import powergraph
-import solarcube
-import buildingelectricity
-import windfarm
+from . import opfdata
+from . import powergraph
+from . import solarcube
+from . import buildingelectricity
+from . import windfarm
 
+
+# Global variables
 HUGGING_FACE_BASE = 'AI-grids'
 
 LIST_AVAIL_TASKNAMES = [

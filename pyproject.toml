@@ -7,13 +7,10 @@ name = "aidotgrids"
 version = "0.0.1"
 description = "Datasets, Models and Methods for Power System Foundation Models"
 readme = "README.md"
-requires-python = ">=3.9"
+requires-python = ">=3.12"
 license = { file = "LICENSE" }
 authors = [
-  { 
-    name = "Arsam Aryandoust", 
-    email = "arsam.aryandoust@eonerc.rwth-aachen.de" 
-  },
+  { name = "Arsam Aryandoust", email = "arsam.aryandoust@eonerc.rwth-aachen.de" },
 ]
 classifiers = [
   "Programming Language :: Python :: 3",
@@ -22,13 +19,14 @@ classifiers = [
 keywords = [
   "Artificial Intelligence", 
   "Machine Learning", 
-  "Power Systems"
+  "Power Systems",
 ]
 dependencies = [
   "numpy>=2.0",
   "pandas>=2.0",
   "h5py>=3.0.0",
   "torch>=2.0.0",
+  "pillow>=12.2.0",
 ]
 
 [project.optional-dependencies]
@@ -37,7 +35,7 @@ dev = [
   "twine",
   "pytest",
   "pytest-cov",
-  "ruff"
+  "ruff",
 ]
 
 [tool.pytest.ini_options]

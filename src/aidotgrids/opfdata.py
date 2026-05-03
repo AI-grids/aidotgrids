@@ -10,7 +10,7 @@ import numpy as np
 from typing import Tuple
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-import dataset_utils
+from . import dataset_utils
 
 SMALL_GRIDS_LIST = [
     'pglib_opf_case14_ieee',
