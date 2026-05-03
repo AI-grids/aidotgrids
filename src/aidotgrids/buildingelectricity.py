@@ -1,14 +1,12 @@
 """Loads requested subtask for BuildingElectricity.
 
 """
-import os 
-import sys
+import os
 from PIL import Image
-from typing import Dict, Any, Tuple, Union, List
+from typing import Dict, Any, Union, List
 import numpy as np
 import pandas as pd
 import gc
-
 
 
 
@@ -260,8 +258,8 @@ def _pair_data(
             }
 
             # check if subtask is supposed to contain historic load in features
-            if not 'wload' in subtask_name:
-                del data_point['load']
+            if 'wload' not in subtask_name:
+                del features['historic_load']
 
             # set data point
             data_point = {

@@ -1,4 +1,7 @@
 .DS_Store
+.venv
+.coverage
 dist
 src/aidotgrids.egg-info/
 notes.rtf
+**/__pycache__
