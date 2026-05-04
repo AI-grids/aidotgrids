@@ -62,8 +62,10 @@ def load_task(
         max_workers_download
     )
 
-    # set path to local directory
-    root_path = os.path.expanduser(root_path) # replaces ~ with full path. safer
+    # replace ~ with full path. safer
+    root_path = os.path.expanduser(root_path)
+
+    # expand root_path with taskname
     local_dir = os.path.join(root_path, task_name)
 
     # download task repository (skips already-downloaded & already-uncompressed)
@@ -236,6 +238,7 @@ def _collect_files(repo_id: str, local_dir: str, subpath: str, files_list: list)
             files_list.append((file_url, local_entry_path))
         elif entry_type == 'directory':
             _collect_files(repo_id, local_dir, subpath=entry_path, files_list=files_list)
+
 
 def _download_single_file(url: str, local_path: str):
     """
