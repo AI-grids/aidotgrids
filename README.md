@@ -44,7 +44,7 @@ from aidotgrids import load
 ds = load.load_task(
     task_name="WindFarm",
     subtask_name="odd_time_predict48h",
-    root_path="~/AI-grids"  # local cache directory
+    root_path="~/AI-grids"  # local cache/download directory
 )
 ```
 
