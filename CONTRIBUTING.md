@@ -37,7 +37,7 @@ cd aidotgrids
 git checkout -b <your_personal_branch>
 ```
 
-```lua
+```cpp
 -------------------------------------main-------------------------------------
             ----------------<your_personal_branch>----------------
 ```
