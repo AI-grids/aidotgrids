@@ -42,9 +42,9 @@ Load a dataset in a few lines:
 from aidotgrids import load
 
 ds = load.load_task(
-    task_name="OPFData",
-    subtask_name="train_small_test_medium",
-    root_path="~/AI-grids"  # local cache directory
+    task_name="WindFarm",
+    subtask_name="odd_time_predict48h",
+    root_path="~/AI-grids"  # local cache/download directory
 )
 ```
 

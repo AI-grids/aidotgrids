@@ -10,7 +10,6 @@
 - [Collaboration Tips](#️-collaboration-tips)
 
 
-
 We use a single long-lived branch for this project:
 
 ```cpp
@@ -19,8 +18,8 @@ We use a single long-lived branch for this project:
 
 All feature and personal development branches should originate from `main`.
 
-## Getting Started
 
+## Getting Started
 To begin contributing:
 1. Clone the repository
 ```bash
@@ -89,8 +88,8 @@ git push -u origin <your_personal_branch>
 
 5. Open a pull request from `<your_personal_branch>` into `main` on GitHub.
 
-## Working with Feature Branches (Optional)
 
+## Working with Feature Branches (Optional)
 You may create short-lived feature branches from your personal branch to isolate 
 work on specific tasks:
 ```lua
@@ -117,8 +116,8 @@ git merge <your_feature_branch>
 git branch -d <your_feature_branch>
 ```
 
-## Important Note on Rebasing
 
+## Important Note on Rebasing
 * Allowed: Use git rebase locally to tidy up your commits before merging into a 
 shared branch.
 * Avoid: Rebasing commits that have already been pushed to the remote repository. 

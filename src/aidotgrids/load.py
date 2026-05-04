@@ -5,8 +5,8 @@ Example usage:
     from aidotgrids import load
 
     ds = load.load_task(
-        task_name='OPFData', 
-        subtask_name='train_small_test_medium',
+        task_name='WindFarm', 
+        subtask_name='odd_time_predict48h',
         root_path='~/AI-grids/'
     )
 
@@ -62,8 +62,11 @@ def load_task(
         max_workers_download
     )
 
-    # set path to local directory
-    local_dir = os.path.join(os.path.expanduser(root_path), task_name)
+    # replace ~ with full path. safer
+    root_path = os.path.expanduser(root_path)
+
+    # expand root_path with taskname
+    local_dir = os.path.join(root_path, task_name)
 
     # download task repository (skips already-downloaded & already-uncompressed)
     _download_hf_repo(
@@ -236,6 +239,7 @@ def _collect_files(repo_id: str, local_dir: str, subpath: str, files_list: list)
         elif entry_type == 'directory':
             _collect_files(repo_id, local_dir, subpath=entry_path, files_list=files_list)
 
+
 def _download_single_file(url: str, local_path: str):
     """
     Download a single file. Skips if:
@@ -348,10 +352,10 @@ def _validate_inputs(
     """
     # validate task_name
     if task_name not in LIST_AVAIL_TASKNAMES:
-        sys.exit(f"Check arguments. Selected task {task_name} not recognized.")
+        sys.exit(f"Selected task '{task_name}' not recognized.")
 
     else:
-        print(f"Processing {subtask_name} for {task_name}.")
+        print(f"Processing task {task_name} for subtask {subtask_name}.")
 
     # validate root_path
     if type(root_path) is not str:
@@ -363,6 +367,7 @@ def _validate_inputs(
         print(f'The data_frac is set to {data_frac}. This is invalid. Resuming',
             'with a value of data_frac=1.')
         data_frac = 1
+
     else:
         print(f'Using {data_frac:.0%} of total data as specified by user.')
 
@@ -374,6 +379,7 @@ def _validate_inputs(
         print(f'Invalid argument {max_workers} for max_workers. Setting',
             'max_workers=1024')
         max_workers = 1024
+
     else:
         # setting ceiled value for max_workers for the case of passed fraction.
         max_workers = math.ceil(max_workers)
@@ -384,9 +390,10 @@ def _validate_inputs(
         type(max_workers_download) is not int
         and type(max_workers_download) is not float
     ):
-        print(f'Invalid argument {max_workers_download} for max_workers.',
+        print(f'Invalid argument {max_workers_download} for max_workers_download.',
             'Setting max_workers_download=4.')
         max_workers_download = 4
+
     else:
         # ceil value for max_workers_download in the case of passed fraction.
         max_workers_download = math.ceil(max_workers_download)
